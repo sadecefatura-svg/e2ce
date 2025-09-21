@@ -1,0 +1,42 @@
+----
+2025-09-18 07:25:47
+TO: admin@e2ce.local
+SUBJECT: Password reset for E2CE
+
+<p>Hello Administrator,</p><p>Use the link below to set a new password (valid for 30 minutes):</p><p><a href="https://e2ce.com/auth/reset?token=f31ad90aa0ff23150f26d95b21be00ea35af11dc80043fd2a8645291e99bd2b6">https://e2ce.com/auth/reset?token=f31ad90aa0ff23150f26d95b21be00ea35af11dc80043fd2a8645291e99bd2b6</a></p><p>If you didn’t request this, you can ignore this email.</p>
+
+----
+2025-09-18 07:26:04
+TO: admin@e2ce.local
+SUBJECT: Password reset for E2CE
+
+<p>Hello Administrator,</p><p>Use the link below to set a new password (valid for 30 minutes):</p><p><a href="https://e2ce.com/auth/reset?token=f030ddf95ec34905352c7ea6c44abd6dc5f4e2e7b8a0e523d4a8d8a004b2cc30">https://e2ce.com/auth/reset?token=f030ddf95ec34905352c7ea6c44abd6dc5f4e2e7b8a0e523d4a8d8a004b2cc30</a></p><p>If you didn’t request this, you can ignore this email.</p>
+
+----
+2025-09-18 07:29:03
+TO: ismail@gencan.com.tr
+SUBJECT: Password reset for E2CE
+
+<p>Hello Administrator,</p><p>Use the link below to set a new password (valid for 30 minutes):</p><p><a href="https://e2ce.com/auth/reset?token=6d9dd842782dc4cb89c058d62ce95ffc6fb6fcf2c24f17a20e98d8a444785034">https://e2ce.com/auth/reset?token=6d9dd842782dc4cb89c058d62ce95ffc6fb6fcf2c24f17a20e98d8a444785034</a></p><p>If you didn’t request this, you can ignore this email.</p>
+
+----
+2025-09-18 07:41:11 [SEND ERROR] The mailer DSN is invalid.
+TO: you@example.com
+SUBJECT: E2CE mail test
+
+<p>This is a <b>test</b> email from E2CE.</p>
+
+----
+2025-09-18 07:42:02 [SEND ERROR] The mailer DSN is invalid.
+TO: igencan@gmail.com
+SUBJECT: E2CE mail test
+
+<p>This is a <b>test</b> email from E2CE.</p>
+
+----
+2025-09-18 07:43:19 [SEND ERROR] The mailer DSN is invalid.
+TO: ismail@gencan.com.tr
+SUBJECT: E2CE mail test
+
+<p>This is a <b>test</b> email from E2CE.</p>
+

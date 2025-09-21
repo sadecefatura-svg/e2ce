@@ -1,0 +1,23 @@
+{
+  "name": "e2ce/cms-starter",
+  "description": "Lightweight PHP CMS Starter (IIS ready)",
+  "type": "project",
+  "require": {
+    "symfony/mailer": "^7.3",
+    "symfony/runtime": "^7.3",
+    "ezyang/htmlpurifier": "^4.18",
+    "intervention/image": "^3.11",
+    "symfony/rate-limiter": "^7.3",
+    "symfony/cache": "^7.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": true
+    }
+  }
+}
