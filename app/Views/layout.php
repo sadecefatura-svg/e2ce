@@ -18,6 +18,13 @@ $robots = $robots ?? 'index,follow';
 // AMP veya mobil alternatif (opsiyonel; post view set edebilir)
 $ampUrl    = $ampUrl    ?? null;
 $mobileUrl = $mobileUrl ?? null;
+
+$navLinks = [
+  ['label' => 'Home',   'href' => '/' . $lang . '/'],
+  ['label' => 'Trends', 'href' => '/' . $lang . '/section/trends'],
+  ['label' => 'Tech',   'href' => '/' . $lang . '/section/tech'],
+  ['label' => 'World',  'href' => '/' . $lang . '/section/world'],
+];
 ?>
 <!doctype html>
 <html lang="<?= htmlspecialchars($lang) ?>" dir="<?= htmlspecialchars($dir) ?>">
@@ -52,33 +59,46 @@ $mobileUrl = $mobileUrl ?? null;
       <a class="e2-brand" href="/<?= htmlspecialchars($lang) ?>/">
         <img src="/assets/logo.png" alt="<?= htmlspecialchars($siteName) ?>" width="96">
       </a>
+      <button class="btn e2-nav-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="e2-nav-toggle-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
 
-      <nav class="d-none d-md-flex align-items-center gap-3">
-        <a href="/<?= htmlspecialchars($lang) ?>/" class="muted">Home</a>
-        <a href="/<?= htmlspecialchars($lang) ?>/section/trends" class="muted">Trends</a>
-        <a href="/<?= htmlspecialchars($lang) ?>/section/tech" class="muted">Tech</a>
-        <a href="/<?= htmlspecialchars($lang) ?>/section/world" class="muted">World</a>
+      <nav class="flex-grow-1" aria-label="Primary navigation">
+        <div class="collapse d-md-flex" id="primaryNav">
+          <div class="e2-nav-menu">
+            <ul class="e2-nav-links list-unstyled mb-0">
+              <?php foreach ($navLinks as $link): ?>
+                <li>
+                  <a href="<?= htmlspecialchars($link['href']) ?>" class="muted"><?= htmlspecialchars($link['label']) ?></a>
+                </li>
+              <?php endforeach; ?>
+            </ul>
 
-        <!-- Dil menüsü -->
-        <div class="dropdown">
-          <a class="e2-btn ghost dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <?= strtoupper(htmlspecialchars($lang)) ?>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <?php
-            $supported = array_keys(I18n::supported());
-            $current = $_SERVER['REQUEST_URI'] ?? '/';
-            foreach ($supported as $code):
-              $next = preg_replace('~^/[a-z-]+/~', '/' . $code . '/', $current);
-              if ($next === null) $next = '/' . $code . '/';
-              $langUrl = '/lang/' . $code . '?next=' . rawurlencode($next);
-            ?>
-              <li><a class="dropdown-item" href="<?= htmlspecialchars($langUrl) ?>"><?= strtoupper(htmlspecialchars($code)) ?></a></li>
-            <?php endforeach; ?>
-          </ul>
+            <div class="e2-nav-controls">
+              <!-- Dil menüsü -->
+              <div class="dropdown">
+                <a class="e2-btn ghost dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <?= strtoupper(htmlspecialchars($lang)) ?>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <?php
+                  $supported = array_keys(I18n::supported());
+                  $current = $_SERVER['REQUEST_URI'] ?? '/';
+                  foreach ($supported as $code):
+                    $next = preg_replace('~^/[a-z-]+/~', '/' . $code . '/', $current);
+                    if ($next === null) $next = '/' . $code . '/';
+                    $langUrl = '/lang/' . $code . '?next=' . rawurlencode($next);
+                  ?>
+                    <li><a class="dropdown-item" href="<?= htmlspecialchars($langUrl) ?>"><?= strtoupper(htmlspecialchars($code)) ?></a></li>
+                  <?php endforeach; ?>
+                </ul>
+              </div>
+
+              <button id="theme-toggle" class="e2-btn ghost" type="button" aria-label="Toggle theme">Theme</button>
+            </div>
+          </div>
         </div>
-
-        <button id="theme-toggle" class="e2-btn ghost" type="button" aria-label="Toggle theme">Theme</button>
       </nav>
     </div>
   </header>
